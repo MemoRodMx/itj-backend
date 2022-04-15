@@ -1,0 +1,13 @@
+@host = http://localhost:2000
+###
+GET {{host}}/items HTTP/1.1
+###
+POST {{host}}/items HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Producto 2",
+    "description": "Descripcion del producto",
+    "price": 10,
+    "image_url": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Fetiqueta-engomada-del-nuevo-elemento-123424679.jpg&imgrefurl=https%3A%2F%2Fes.dreamstime.com%2Fillustration%2Fitem.html&tbnid=aXjqujr1mcoh_M&vet=12ahUKEwjj2afKo5T3AhUTYM0KHQo4CJQQMygBegUIARDAAQ..i&docid=UVwZX_Fp0_9rlM&w=1300&h=1390&q=item%20image&ved=2ahUKEwjj2afKo5T3AhUTYM0KHQo4CJQQMygBegUIARDAAQ"
+}
