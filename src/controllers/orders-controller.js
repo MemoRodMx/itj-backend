@@ -1,54 +1,16 @@
-import service from "../services/items-service.js";
+import service from "../services/orders-service.js";
 
-const readItems = async (req, res, next) => {
+const createOrder = async (req, res, next) => {
   try {
-    res.json(await service.readItems(req.params));
-  } catch (err) {
-    next(err);
-  }
-};
+    let order = await service.createOrder(req.body);
 
-const createItem = async (req, res, next) => {
-  try {
-    let item = await service.createItem(req.body);
-
-    if (!item.errors) {
+    if (!order.errors) {
       res.status(201);
-      res.json(item);
+      res.json(order);
     } else {
       res.status(400);
-      res.json({ message: _stringifyMongooseErrors(item.errors) });
+      res.json({ message: _stringifyMongooseErrors(order.errors) });
     }
-  } catch (err) {
-    next(err);
-  }
-};
-
-const updateItem = async (req, res, next) => {
-  try {
-    const { _id } = req.body;
-    delete req.body._id;
-    let item = await service.updateItem(_id, req.body);
-
-    if (!item.errors) {
-      res.status(200);
-      res.json(item);
-    } else {
-      res.status(400);
-      res.json({ message: _stringifyMongooseErrors(item.errors) });
-    }
-  } catch (err) {
-    next(err);
-  }
-};
-
-const removeItem = async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    let deleted = await service.removeItem(id);
-
-    res.status(200);
-    res.json({ _id: id });
   } catch (err) {
     next(err);
   }
@@ -132,8 +94,5 @@ const _removeAllUnderscores = (word) => {
 };
 
 export default {
-  readItems,
-  createItem,
-  updateItem,
-  removeItem,
+  createOrder,
 };

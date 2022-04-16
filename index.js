@@ -9,6 +9,7 @@ const port = PORT ?? 2000;
 const router = express.Router();
 
 import itemsRouter from "./src/routes/items.routes.js";
+import ordersRouter from "./src/routes/orders.routes.js";
 
 import "./src/models/connection.js";
 
@@ -29,6 +30,7 @@ app.use(express.json());
 
 // Routes
 app.use("/items", itemsRouter);
+app.use("/orders", ordersRouter);
 
 // Default
 router.get("", (req, res) => {

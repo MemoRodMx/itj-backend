@@ -18,9 +18,15 @@ const createItem = async (item) => {
   return item;
 };
 
-const updateItem = async () => {};
+const updateItem = async (_id, item) => {
+  return await ItemModel.findByIdAndUpdate(_id, item, {
+    returnDocument: "after",
+  });
+};
 
-const removeItem = async () => {};
+const removeItem = async (_id) => {
+  return await ItemModel.findOneAndDelete(_id);
+};
 
 export default {
   readItems,
