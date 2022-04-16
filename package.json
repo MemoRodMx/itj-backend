@@ -10,8 +10,7 @@
   "scripts": {
     "start": "node src/index",
     "test": "jest --forceExit",
-    "dev": "nodemon src/index",
-    "build": "nodemon src/index"
+    "dev": "nodemon src/index"
   },
   "keywords": [],
   "author": "",
