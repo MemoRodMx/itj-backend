@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index",
-    "test": "jest"
+    "start": "node src/index",
+    "test": "jest --forceExit",
+    "dev": "nodemon src/index",
+    "build": "nodemon src/index"
   },
   "keywords": [],
   "author": "",
