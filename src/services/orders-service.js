@@ -1,4 +1,4 @@
-import OrderModel from "../models/Order.js";
+const OrderModel = require("../models/Order.js");
 
 const createOrder = async (order) => {
   order = new OrderModel(order);
@@ -6,6 +6,6 @@ const createOrder = async (order) => {
   return order;
 };
 
-export default {
+module.exports = {
   createOrder,
 };

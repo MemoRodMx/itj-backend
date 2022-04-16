@@ -1,8 +1,8 @@
-import express from "express";
-import ctrl from "../controllers/orders-controller.js";
+const express = require("express");
+const ctrl = require("../controllers/orders-controller.js");
 
 const router = express.Router();
 
 router.post("/", ctrl.createOrder);
 
-export default router;
+module.exports = router;

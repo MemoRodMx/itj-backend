@@ -1,4 +1,4 @@
-import ItemModel from "../models/Item.js";
+const ItemModel = require("../models/Item.js");
 
 const readItems = async ({ id }) => {
   let filter = {};
@@ -28,7 +28,7 @@ const removeItem = async (_id) => {
   return await ItemModel.findOneAndDelete(_id);
 };
 
-export default {
+module.exports = {
   readItems,
   createItem,
   updateItem,

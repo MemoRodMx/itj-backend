@@ -1,4 +1,4 @@
-import service from "../services/items-service.js";
+const service = require("../services/items-service.js");
 
 const readItems = async (req, res, next) => {
   try {
@@ -131,7 +131,7 @@ const _removeAllUnderscores = (word) => {
   return word;
 };
 
-export default {
+module.exports = {
   readItems,
   createItem,
   updateItem,

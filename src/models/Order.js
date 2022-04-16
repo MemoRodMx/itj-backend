@@ -1,6 +1,5 @@
-import mongoose from "mongoose";
-const { Schema, model } = mongoose;
-import Item from "./Item.js";
+const { Schema, model } = require("mongoose");
+const Item = require("./Item.js");
 
 const ItemSchema = Item.schema;
 
@@ -19,4 +18,4 @@ const Order = Schema(
   { timestamps: true }
 );
 
-export default model("OrderModel", Order, "orders");
+module.exports = model("OrderModel", Order, "orders");

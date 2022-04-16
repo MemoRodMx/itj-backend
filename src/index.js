@@ -1,6 +1,6 @@
-import dotenv from "dotenv";
-import express from "express";
-import cors from "cors";
+const dotenv = require("dotenv");
+const express = require("express");
+const cors = require("cors");
 
 dotenv.config();
 const app = express();
@@ -8,10 +8,10 @@ const { PORT } = process.env;
 const port = PORT ?? 2000;
 const router = express.Router();
 
-import itemsRouter from "./src/routes/items.routes.js";
-import ordersRouter from "./src/routes/orders.routes.js";
+const itemsRouter = require("./routes/items.routes.js");
+const ordersRouter = require("./routes/orders.routes.js");
 
-import "./src/models/connection.js";
+require("./models/connection.js");
 
 app.listen(port, () => {
   console.log(`Ready on ${port}!`);
@@ -38,3 +38,5 @@ router.get("", (req, res) => {
 });
 
 app.use("/", router);
+
+module.exports = app;

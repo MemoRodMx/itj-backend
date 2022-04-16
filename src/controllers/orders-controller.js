@@ -1,4 +1,4 @@
-import service from "../services/orders-service.js";
+const service = require("../services/orders-service.js");
 
 const createOrder = async (req, res, next) => {
   try {
@@ -93,6 +93,6 @@ const _removeAllUnderscores = (word) => {
   return word;
 };
 
-export default {
+module.exports = {
   createOrder,
 };

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const Item = Schema(
@@ -13,8 +13,9 @@ const Item = Schema(
       type: Number,
       required: "The item price is required",
     },
+    quantity: Number,
   },
   { timestamps: true }
 );
 
-export default model("ItemModel", Item, "items");
+module.exports = model("ItemModel", Item, "items");
