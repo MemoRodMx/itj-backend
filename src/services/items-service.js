@@ -25,7 +25,7 @@ const updateItem = async (_id, item) => {
 };
 
 const removeItem = async (_id) => {
-  return await ItemModel.findOneAndDelete(_id);
+  return await ItemModel.findByIdAndDelete(_id);
 };
 
 module.exports = {
